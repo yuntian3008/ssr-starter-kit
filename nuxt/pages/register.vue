@@ -14,11 +14,20 @@
       </div>
       <div class="form-control">
         <label class="label">
+          <span class="label-text">Họ</span>
+        </label>
+        <input type="text" v-model="form.last_name" placeholder="Họ" class="input input-accent input-bordered">
+        <label class="label flex flex-col justify-start items-start" v-if="errors.last_name.length">
+          <span class="label-text-alt text-error" v-for="(err, index) in errors.last_name" :key="index">{{err}}</span>
+        </label>
+      </div>
+      <div class="form-control">
+        <label class="label">
           <span class="label-text">Tên</span>
         </label>
-        <input type="text" v-model="form.name" placeholder="Tên" class="input input-accent input-bordered">
-        <label class="label flex flex-col justify-start items-start" v-if="errors.name.length">
-          <span class="label-text-alt text-error" v-for="(err, index) in errors.name" :key="index">{{err}}</span>
+        <input type="text" v-model="form.first_name" placeholder="Tên" class="input input-accent input-bordered">
+        <label class="label flex flex-col justify-start items-start" v-if="errors.first_name.length">
+          <span class="label-text-alt text-error" v-for="(err, index) in errors.first_name" :key="index">{{err}}</span>
         </label>
       </div>
       <div class="form-control">
@@ -61,11 +70,13 @@ export default {
         email: [],
         password: [],
         password_confirmation: [],
-        name: [],
+        first_name: [],
+        last_name: [],
       },
       form: {
         email: '',
-        name: '',
+        first_name: '',
+        last_name: '',
         password: '',
         password_confirmation : '',
       },
@@ -85,7 +96,8 @@ export default {
           this.errors.email = errors.email !== undefined ? errors.email : [];
           this.errors.password = errors.password !== undefined ? errors.password : [];
           this.errors.password_confirmation = errors.password_confirmation !== undefined ? errors.password_confirmation : [];
-          this.errors.name = errors.name !== undefined ? errors.name : [];
+          this.errors.first_name = errors.name !== undefined ? errors.name : [];
+          this.errors.last_name = errors.name !== undefined ? errors.name : [];
         }
 
         console.log(err.response)

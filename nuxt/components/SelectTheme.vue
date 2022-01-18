@@ -1,7 +1,7 @@
 <template>
    <div class="dropdown dropdown-end">
     <div tabindex="2" class="m-1 btn btn-sm btn-ghost">Chủ đề: {{ key }}</div>
-      <ul tabindex="2" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52 text-base-content">
+      <ul tabindex="2" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52 text-base-content overflow-y-scroll gap-y-2" style="height: 50vh;">
         <li v-for="(theme, index) in themes" :key="index">
           <a :data-set-theme="theme" :class="'capitalize ' + (theme == key ? 'bg-accent text-base-100' : 'hover:bg-accent hover:text-base-100')" @click="changeTheme(theme)">{{ theme }}</a>
         </li>

@@ -1,14 +1,14 @@
 <template>
-  <div class="navbar mb-2 shadow-lg bg-accent-focus text-base-100 gap-x-2">
+  <nav class="navbar mb-2 shadow-lg bg-accent-focus text-base-100 gap-x-2">
     <div class="navbar-start">
       <button class="lg:hidden btn btn-square btn-ghost">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-6 h-6 stroke-current">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
-      <span class="text-lg font-bold ml-3">
+      <NuxtLink to="/" class="text-lg font-bold ml-3">
               Something
-            </span>
+      </NuxtLink>
     </div>
     <!-- <div class="flex-none">
       <div class="form-control">
@@ -32,7 +32,7 @@
       <div class="dropdown dropdown-end">
         <div tabindex="0" class="m-1 avatar">
           <div class="rounded-full w-10 h-10 m-1">
-            <img src="https://i.pravatar.cc/500?img=32">
+            <img :src="'https://ui-avatars.com/api/?name='+ $auth.user.first_name + '+' + $auth.user.last_name + '&background=FFFFFF'">
           </div>
         </div>
         <ul tabindex="0" class="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52 text-base-content">
@@ -42,12 +42,15 @@
                 </span>
           </li>
           <li>
+            <NuxtLink to="/profile" class="hover:bg-accent hover:text-base-100">Hồ sơ</NuxtLink>
+          </li>
+          <li>
             <a class="hover:bg-accent hover:text-base-100" @click="logout">Đăng xuất</a>
           </li>
         </ul>
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>

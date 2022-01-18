@@ -22,10 +22,9 @@ export default {
     htmlAttrs: {
       'data-theme' : "light",
     },
-  },
-
-  body: {
-    class: 'bg-accent'
+    bodyAttrs: {
+      class: 'bg-accent min-h-screen'
+    }
   },
 
   loading: {
