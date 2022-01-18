@@ -11,6 +11,7 @@
 
 - Authentication
 - Server Side Rendering (SEO)
+- TailwindCSS (DaisyUI)
 
 ## Use
 - <a href="https://github.com/laravel/passport">Passport Laravel</a>
